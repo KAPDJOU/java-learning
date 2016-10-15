@@ -173,7 +173,8 @@ interface IsWarmBlooded {
     }
 
     // public default void eatMeat(); // DOES NOT COMPILE
-
+    public default void eatMeat() {};
+    
     // public int getRequiredFoodAmount() { return 13; } // DOES NOT COMPILE
 }
 

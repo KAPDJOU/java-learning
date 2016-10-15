@@ -95,7 +95,6 @@ class PredicateSearch {
     public static void main(String[] args) {
         List<Animal> animals = new ArrayList<Animal>();
         animals.add(new Animal("fish", false, true));
-        
 
         print(animals, a -> a.canHop());
     }
@@ -106,5 +105,20 @@ class PredicateSearch {
                 System.out.print(animal + " ");
         }
         System.out.println();
+    }
+}
+
+/** Create instance of runnable type */
+interface Runnable {
+    public void run();
+}
+
+class TestRunnable {
+    public static void main(String[] args) {
+            Runnable run = () -> System.out.println("Run");
+            // DOES not compile
+            // Runnable run = () -> { System.out.println("Run"); };
+            // Runnable run = () > System.out.println("Run");
+            // Runnable run = -> System.out.println("Run");
     }
 }

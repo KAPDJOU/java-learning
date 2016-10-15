@@ -56,6 +56,21 @@ public class Chap1 {
         // String hollywood@vine ; // @ is not a letter, digit, $ or _
         // String *$coffee ; // * is not a letter, digit, $ or _
         // String public ; // public is a reserved word
+        
+        
+        float a = 4;
+        float b = 4;
+        float c = a + b;
+        double d = a + b;
+        
+        int primitive = Integer.parseInt("123");
+        Integer wrapper = Integer.valueOf("123");
+        
+        Integer number = Integer.valueOf("808.1"); // thow java.lang.NumberFormatException:
+        System.out.println("Integer.valueOf('808.1') = " + number);
+        
+        Double number2 = Double.valueOf("120D");
+        
     }
 
 }

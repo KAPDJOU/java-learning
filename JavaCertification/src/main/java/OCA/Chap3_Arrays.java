@@ -6,10 +6,11 @@ public class Chap3_Arrays {
 
     public static void main(String args[]) {
 
+        instaciate();
         // looping();
         // sorting();
         // multidimensionalArrays();
-        equality();
+//        equality();
     }
 
     /**
@@ -17,6 +18,9 @@ public class Chap3_Arrays {
      */
     public static void instaciate() {
         // declares and initializes the array
+        
+        int[] arrays = new int[-2]; // throw  java.lang.NegativeArraySizeException
+        
         String[] mammals = { "monkey", "chimp", "donkey" };
         System.out.println(mammals.length); // 3
         System.out.println(mammals[0]); // monkey

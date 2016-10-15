@@ -105,6 +105,10 @@ class Canine {
     public final boolean hasFeathers() {
         return true;
     }
+    
+    public boolean hasTest() {
+        return true;
+    }
 }
 
 class Wolf extends Canine {
@@ -116,6 +120,11 @@ class Wolf extends Canine {
     // DOES NOT COMPILE, cannot override the final parent method
     // public final boolean hasFeathers() {return false;}
 
+    public final boolean hasTest() {        
+        return false;
+        
+    }
+    
     public static void main(String[] args) {
         System.out.println(new Canine().getAverageWeight()); // 50.0
         System.out.println(new Wolf().getAverageWeight()); // 70.0
