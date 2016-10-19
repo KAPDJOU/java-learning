@@ -10,7 +10,8 @@ public class Chap3_String {
     public static void main(String args[]) {
 
 //        builderString();
-        commonMethods();
+//        commonMethods();
+        equality();
     }
 
     /**
@@ -147,16 +148,31 @@ public class Chap3_String {
     }
 
     /**
-     * EQUALITY
+     * EQUALITY | equals vs == 
      * <p>
      */
     public static void equality() {
 
+        // StringBuilder uses the implementation of equals() provided by Object, 
+        // which simply  checks if the two objects being referred to are the same.
+        
         StringBuilder one = new StringBuilder();
         StringBuilder two = new StringBuilder();
         StringBuilder three = one.append("a");
         System.out.println(one == two); // false
         System.out.println(one == three); // true
+        
+        StringBuilder sb1 = new StringBuilder("lion");
+        StringBuilder sb2 = new StringBuilder("lion");
+        StringBuilder sb3 = sb1; 
+        System.out.println(sb1.equals(sb2)); // false
+        System.out.println(sb1.equals(sb3)); // true
+        
+        // String does have an equals() method. It checks that the values are the same.
+        
+        String s1 = new String("lion");
+        String s2 = new String("lion");
+        System.out.println(s1.equals(s2)); // true
 
         String x = "Hello World";
         String y = "Hello World";
