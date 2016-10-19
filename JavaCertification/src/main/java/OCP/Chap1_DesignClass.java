@@ -30,7 +30,8 @@ class InstanceOfClasseTest {
 
         Hippo nullHippo = null;
         boolean b5 = nullHippo instanceof Object; // false
-
+        boolean b5_ = null instanceof Object; // false
+        
         Hippo anotherHippo = new Hippo(); 
         // boolean b5 = anotherHippo instanceof Elephant; // DOES NOT COMPILE,  Hippo doesn’t extend Elephant directly or indirectly.
         boolean b6 = anotherHippo instanceof Hippo; // true

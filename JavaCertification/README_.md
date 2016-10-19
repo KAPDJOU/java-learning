@@ -45,6 +45,11 @@ I feel like I code better since I've read this book
 
 * [OCP: Oracle Certified Professional Java SE 8 Programmer II Study Guide: Exam 1Z0-809](https://www.amazon.com/OCP-Certified-Professional-Programmer-1Z0-809/dp/1119067901/ref=sr_1_4?s=books&ie=UTF8&qid=1474557053&sr=1-4&keywords=OCA%2FOCP+Java+SE)
 
+others books :
+
+* [A Comprehensive OCPJP 8 Certification Guide By S. Ganesh , Tushar Sharma and Hari Kiran](http://www.apress.com/9781484218358?gtmf=s)
+
+
 ## Advices
 
 ## FeedBack from my experience

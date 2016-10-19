@@ -1,5 +1,6 @@
 package OCA;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -24,9 +25,9 @@ public class Chap3_DatesAndTimes {
 
         // manipulating();
 
-        // workingWithPeriod();
+         workingWithPeriod();
 
-         formatting();
+//         formatting();
 
 //         parsing();
 
@@ -141,6 +142,13 @@ public class Chap3_DatesAndTimes {
         System.out.println("start =" + start);
         System.out.println("end =" + end);
         System.out.println("upTo = " + upTo);
+        
+        // 
+        String d = Duration.ofDays(1).toString();
+        String p =  Period.ofDays(2).toString();
+        System.out.println("d = "+d + ", p=" + p);
+        System.out.println(d == p);
+        System.out.println(d.equals(p));
     }
 
     /**
