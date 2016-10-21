@@ -23,17 +23,9 @@ class Animal {
         canSwim = swimmer;
     }
 
-    public boolean canHop() {
-        return canHop;
-    }
-
-    public boolean canSwim() {
-        return canSwim;
-    }
-
-    public String toString() {
-        return species;
-    }
+    public boolean canHop() { return canHop; }
+    public boolean canSwim() { return canSwim; }
+    public String toString() { return species; }
 }
 
 // funtionnal interface, interface with one method
@@ -97,6 +89,9 @@ class PredicateSearch {
         animals.add(new Animal("fish", false, true));
 
         print(animals, a -> a.canHop());
+        
+        print(new Animal("fish", false, true), a -> a.canHop());
+        print(new Animal("kangaroo", true, false), a -> a.canHop());
     }
 
     private static void print(List<Animal> animals, Predicate<Animal> checker) {
@@ -105,6 +100,11 @@ class PredicateSearch {
                 System.out.print(animal + " ");
         }
         System.out.println();
+    }
+    
+    private static void print(Animal animal, CheckTrait trait) {
+        if(trait.test(animal))
+        System.out.println(animal);
     }
 }
 
