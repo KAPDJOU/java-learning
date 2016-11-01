@@ -17,13 +17,7 @@ public class Chap3_ArrayList {
 
     public static void main(String args[]) {
 
-        // commonMethod();
-
-        autoboxing();
-
-        // conversion();
-
-        // sorting();
+         commonMethod();
 
         // TODO build use case that show all method at meantime
     }
@@ -129,53 +123,29 @@ public class Chap3_ArrayList {
         }
     }
 
-    /**
-     * Converting Between array and List
-     */
-    public static void conversion() {
-
-        System.out.println(newLine + "========= list -> Arrays");
-
+    
+    /** looping through a list */
+    public static void loop() {
         List<String> list = new ArrayList<>();
-        list.add("hawk");
-        list.add("robin");
-        Object[] objectArray = list.toArray(); // defaults to an array of class Object
-        System.out.println(objectArray.length); // 2
-        String[] stringArray = list.toArray(new String[0]); // specifies "string" is the type of the array
-        System.out.println(stringArray.length); // 2
-
-        System.out.println(newLine + "========= arrays -> list");
-
-        String[] array = { "hawk", "robin" }; // [hawk, robin]
-        list = Arrays.asList(array); // returns fixed size list
-        System.out.println(list.size()); // 2
-        list.set(1, "test"); // [hawk, test]
-        array[0] = "new"; // [new, test]
-        System.out.println("array = " + Arrays.toString(array)); // [new, test]
-        // list.remove(1); // throws UnsupportedOperation Exception, not allowed to change size of list
-
-    }
-
-    /**
-     * Autoboxing
-     */
-    public static void autoboxing() {
-        List<Integer> ages = new ArrayList<>();
-        ages.add(Integer.parseInt("5"));
-        ages.add(Integer.valueOf("5"));
-        ages.add(7);
-        ages.add(null);
-        for (Integer age : ages) {
-            System.out.println(age);
+        list.add("SD"); // [SD]
+        list.add(0, "NY"); // [NY,SD]
+        list.set(1, "FL"); // [NY,FL]
+        
+        // enhanced for loop:
+        for (String string: list) {
+            System.out.println(string);
         }
-        /*
-         * output 5 5 7 null
-         */
+        
+        // Iterator : before Java 5:
+        Iterator iter = list.iterator();
+        while(iter.hasNext()) {
+            String string = (String) iter.next();
+            System.out.println(string);
+        }
     }
-
-    /**
-     * Equality
-     */
+    
+    
+    /** Equality */
     public static void equality() {
         List<String> one = new ArrayList<String>();
         one.add("abc");
@@ -185,10 +155,39 @@ public class Chap3_ArrayList {
         System.out.println(one.equals(two)); // true | same element in the same order
     }
 
-    /**
-     * Sorting
-     */
-    public static void sorting() {
+}
+
+/** Converting between Arrays and List*/
+
+class PlayConvertion {
+    public static void main(String[] args) {
+        System.out.println("list -> Arrays : " + System.lineSeparator());
+
+        List<String> list = new ArrayList<>();
+        list.add("hawk");
+        list.add("robin");
+        Object[] objectArray = list.toArray(); // defaults to an array of class Object
+        System.out.println(objectArray.length); // 2
+        String[] stringArray = list.toArray(new String[0]); // specifies "string" is the type of the array
+        System.out.println(stringArray.length); // 2
+
+        System.out.println("Arrays -> list" + System.lineSeparator());
+
+        String[] array = { "hawk", "robin" }; // [hawk, robin]
+        list = Arrays.asList(array); // returns fixed size list
+        System.out.println(list.size()); // 2
+        list.set(1, "test"); // [hawk, test]
+        array[0] = "new"; // [new, test]
+        System.out.println("array = " + Arrays.toString(array)); // [new, test]
+        // list.remove(1); // throws UnsupportedOperation Exception, not allowed to change size of list
+        
+    }
+}
+
+/** Sorting */
+
+class PlaySorting {
+    public static void main(String[] args) {
         List<Integer> numbers = new ArrayList<>();
         numbers.add(99);
         numbers.add(5);
@@ -196,5 +195,29 @@ public class Chap3_ArrayList {
         Collections.sort(numbers);
         System.out.println(numbers); // [5, 81, 99]
     }
+}
 
+/** Wrapper Classes and Autoboxing*/
+
+class PlayAutoboxing {
+    public static void main(String[] args) {
+        List<Integer> ages = new ArrayList<>();
+        ages.add(Integer.parseInt("5"));
+        ages.add(Integer.valueOf("5"));
+        ages.add(7);
+        ages.add(null);
+        for (Integer age : ages) {
+            System.out.println(age);
+        }
+        /* output :  5 5 7 null */
+        
+        // @see OCP page 107
+        List<Integer> numbers = new ArrayList<Integer>();
+        numbers.add(1);
+        numbers.add(new Integer(3));
+        numbers.add(new Integer(5)); // [1, 3, 5]
+        numbers.remove(1); // [1, 5]
+        numbers.remove(new Integer(5)); // [1]
+        System.out.println(numbers);// print [1] 
+    }
 }

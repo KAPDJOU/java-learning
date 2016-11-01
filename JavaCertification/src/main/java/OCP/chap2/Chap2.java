@@ -6,6 +6,8 @@ public class Chap2 {
     }
 }
 
+// TODO merge with chap5_interface
+
 /** Designing an Interface | @see page 48 */
 
 interface Fly {
