@@ -1,8 +1,13 @@
 package OCP.Chap3;
 
+import java.util.ArrayDeque;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.NavigableSet;
+import java.util.Queue;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Chap3_List_Set_Queue_Map {
@@ -59,7 +64,56 @@ class PlayQueue {
         
         
         {
-            
+            Queue<Integer> queue = new ArrayDeque<>();
+            System.out.println(queue.offer(10)); // true // [10]
+            System.out.println(queue.offer(4)); // true // [10, 4]
+            System.out.println(queue.peek()); // 10 // [10, 4]
+            System.out.println(queue.poll()); // 10 // [4]
+            System.out.println(queue.poll()); // 4 // []
+            System.out.println(queue.peek()); // null // []    
+        }
+        {
+            ArrayDeque<Integer> stack = new ArrayDeque<>();
+            stack.push(10); // [10]
+            stack.push(4); // [4, 10]
+            System.out.println(stack.peek()); //4 // [4, 10]
+            System.out.println(stack.poll()); // 4 // [10]
+            System.out.println(stack.poll()); // 10
+            System.out.println(stack.peek()); // null
         }
     }
 }
+
+/** Set | Page 138 */
+
+class PlayMap {
+    public static void main(String[] args) {
+        
+        // HashMap
+        {
+            Map<String, String> map = new HashMap<>();
+            map.put("koala", "bamboo");
+            map.put("lion", "meat");
+            map.put("giraffe", "leaf");
+            String food = map.get("koala"); // bamboo
+            for (String key: map.keySet())
+            System.out.print(key + ","); // koala,giraffe,lion,
+        }
+        // TreeMap
+        {
+            Map<String, String> map = new TreeMap<>();
+            map.put("koala", "bamboo");
+            map.put("lion", "meat");
+            map.put("giraffe", "leaf");
+            String food = map.get("koala"); // bamboo
+            for (String key: map.keySet())
+            System.out.print(key + ","); // giraffe,koala,lion,    
+            
+            // System.out.println(map.contains("lion")); // DOES NOT COMPILE, method on the Collection interface but not the Map interface. 
+            System.out.println(map.containsKey("lion")); // true
+            System.out.println(map.containsValue("lion")); // false
+            System.out.println(map.size()); // 3
+        }
+        
+    }
+}       
