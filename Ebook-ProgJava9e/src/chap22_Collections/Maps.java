@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class Collection_Map {
+public class Maps {
     public static void main(String args[]) {
     }
 }
