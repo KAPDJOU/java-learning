@@ -17,13 +17,26 @@ public class Chap3_List_Set_Queue_Map {
 }
 
 
+/** List | Page */
+
+class PlayList {
+    public static void main(String[] args) {
+        // linkedList
+        {
+            
+        }
+        // ArrayList
+        {
+            
+        }
+    }
+}
+
 /** Set | Page 132 */
 
 class PlaySet {
-
     public static void main(String[] args) {
-    
-     // Hashset
+        // Hashset
         {
             Set<Integer> set = new HashSet<>();
             boolean b1 = set.add(66); // true
@@ -34,7 +47,6 @@ class PlaySet {
             for (Integer integer: set) System.out.print(integer + ","); // 66,8,10,
             
         }
-        
         // TreeSet
         {
             Set<Integer> set = new TreeSet<>();
@@ -57,12 +69,12 @@ class PlaySet {
     }
 }
 
+
 /** Set | Page 132 */
 
 class PlayQueue {
     public static void main(String[] args) {
-        
-        
+        // Queue 
         {
             Queue<Integer> queue = new ArrayDeque<>();
             System.out.println(queue.offer(10)); // true // [10]
@@ -72,6 +84,7 @@ class PlayQueue {
             System.out.println(queue.poll()); // 4 // []
             System.out.println(queue.peek()); // null // []    
         }
+        // ArrayDeque
         {
             ArrayDeque<Integer> stack = new ArrayDeque<>();
             stack.push(10); // [10]
@@ -88,9 +101,8 @@ class PlayQueue {
 
 class PlayMap {
     public static void main(String[] args) {
-        
         // HashMap
-        {
+        {            
             Map<String, String> map = new HashMap<>();
             map.put("koala", "bamboo");
             map.put("lion", "meat");

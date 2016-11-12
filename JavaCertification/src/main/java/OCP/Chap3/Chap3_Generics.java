@@ -67,8 +67,7 @@ interface Shippable<T> {
 }
 
 class ShippableRobotCrate implements Shippable<Robot> {
-    public void ship(Robot t) {
-    }
+    public void ship(Robot t) {}
 }
 class ShippableAbstractCrate<U> implements Shippable<U> {
     public void ship(U t) { }
@@ -98,7 +97,7 @@ class PlayGenericMethod {
 }
 
 /** Bound | @see page 117 */
-//@formatter:on
+
 class PlayBounds {
 
     // Unbounded Wildcards
@@ -176,3 +175,5 @@ class Goose implements Flyer { public void fly() {} }
 class A {}
 class B extends A { }
 class C extends B { }
+
+// @formatter:on

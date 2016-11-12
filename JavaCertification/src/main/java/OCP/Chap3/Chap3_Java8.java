@@ -95,6 +95,7 @@ public class Chap3_Java8 {
             Map<String, String> favorites = new HashMap<>();
             favorites.put("Jenny", "Bus Tour");
             favorites.put("Tom", "Bus Tour");
+            
             favorites.merge("Jenny", "Skyride", mapper);
             favorites.merge("Sam", "Skyride", mapper);
             System.out.println(favorites); // {Tom=Bus Tour, Sam=Skyride}
