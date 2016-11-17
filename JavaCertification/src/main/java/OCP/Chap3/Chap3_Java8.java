@@ -57,6 +57,12 @@ public class Chap3_Java8 {
             cats.forEach(c -> System.out.println(c));
             // with method reference
             cats.forEach(System.out::println);
+            
+            Map<Integer, String> maps = new HashMap<>();
+            maps.put(1, "Un");
+            maps.put(1, "Deux");
+            maps.forEach((k, v) -> System.out.println(k + ":" + v));
+            
         }
 
         // java 8 Map APIs

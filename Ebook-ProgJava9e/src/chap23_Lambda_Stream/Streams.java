@@ -65,8 +65,7 @@ class SourceStreams {
         // 3 8 2 12 8 3 15
 
         System.out.println("\n-- Filtrage des pairs avec une liste de valeurs");
-        Stream.of(1, 8, -3, 5, -11, 3, 7, 12, 5).filter(ee -> 2 * (ee / 2) == ee)
-                .forEach(ee -> System.out.print(ee + " "));
+        Stream.of(1, 8, -3, 5, -11, 3, 7, 12, 5).filter(ee -> 2 * (ee / 2) == ee).forEach(ee -> System.out.print(ee + " "));
         // 8 12
 
         System.out.println("\n-- Filtrage des >0 avec un tableau");
