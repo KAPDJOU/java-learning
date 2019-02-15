@@ -135,9 +135,8 @@ public class supermarket {
     public static void main(String[] args) {
 	// Arrays to perform tests
 	long[] tests = { 1, 17, 16, 6 };
-	long[] tests2 = { 1, 2};
 
-	for (long s : tests2) {
+	for (long s : tests) {
 	    Change m = Solution2.optimalChange2(s);
 	    Solution2.printResult(m, s);
 	}
