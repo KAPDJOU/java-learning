@@ -1,6 +1,6 @@
 # Java features DEMO
 
-Set of sample demonstrate the java langages features
+Set of sample/tutorials i use to lern the java langages features
 
 
 ### Demo-XXX : 

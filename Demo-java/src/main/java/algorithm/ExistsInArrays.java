@@ -20,9 +20,14 @@ public class ExistsInArrays {
      * 
      * Le but de cet exercice est de vérifier la présence d’un nombre dans un tableau.
      * 
-     * Spécifications : Les éléments sont des nombres entiers classés du plus petit au plus grand Le tableau peut
-     * contenir jusqu’à 1 million d’éléments Le tableau n’est jamais null Implémentez la méthode boolean A.exists(int[]
-     * ints, int k) afin qu’elle retourne true si k est présent dans ints, sinon la méthode devra retourner false.
+     * Spécifications : Les éléments sont des nombres entiers classés du plus petit au plus grand
+     * 
+     * Le tableau peut contenir jusqu’à 1 million d’éléments
+     * 
+     * Le tableau n’est jamais null
+     * 
+     * Implémentez la méthode boolean A.exists(int[]ints, int k) afin qu’elle retourne true si k est présent dans ints,
+     * sinon la méthode devra retourner false.
      * 
      * Important : Essayez de privilégier le temps d'exécution.
      * 
@@ -38,7 +43,6 @@ public class ExistsInArrays {
      * 
      */
 
-
     /**
      * LIST
      * <p>
@@ -46,7 +50,7 @@ public class ExistsInArrays {
      * them in before doing anything with the collection type.
      */
     public static boolean useList(String[] arr, String targetValue) {
-        return Arrays.asList(arr).contains(targetValue);
+	return Arrays.asList(arr).contains(targetValue);
     }
 
     /**
@@ -55,8 +59,8 @@ public class ExistsInArrays {
      * hashset can do it in O(1)
      */
     public static boolean useSet(String[] arr, String targetValue) {
-        Set<String> set = new HashSet<String>(Arrays.asList(arr));
-        return set.contains(targetValue);
+	Set<String> set = new HashSet<String>(Arrays.asList(arr));
+	return set.contains(targetValue);
     }
 
     /**
@@ -65,11 +69,19 @@ public class ExistsInArrays {
      * using a simple loop method is more efficient than using any collection
      */
     public static boolean useLoop(String[] arr, String targetValue) {
-        for (String s : arr) {
-            if (s.equals(targetValue))
-                return true;
-        }
-        return false;
+	for (String s : arr) {
+	    if (s.equals(targetValue))
+		return true;
+	}
+	return false;
+    }
+
+    static boolean exists(int[] ints, int k) {
+	for (int s : ints) {
+	    if (s == k)
+		return true;
+	}
+	return false;
     }
 
     /**
@@ -80,65 +92,61 @@ public class ExistsInArrays {
      * a sorted list or tree can do it in O(log(n))
      */
     public static boolean useArraysBinarySearch(String[] arr, String targetValue) {
-        int a = Arrays.binarySearch(arr, targetValue);
-        if (a > 0)
-            return true;
-        else
-            return false;
+	int a = Arrays.binarySearch(arr, targetValue);
+	return a > 0;
     }
-
 
     /**
      * Main METHOD
      */
     public static void main(String[] args) {
 
-        // with small array
-        String[] arr = new String[] { "CD", "BC", "EF", "DE", "AB" };
+	// with small array
+	String[] arr = new String[] { "CD", "BC", "EF", "DE", "AB" };
 
-        // Use a larger array
-        int size = 1000;// test 1k, 10k, 100k, 1Million
-        int arrInt[] = new int[size];
-        Random s = new Random();
-        for (int i = 0; i < 1000; i++) {
-            arrInt[i] = s.nextInt(); // String.valueOf(s.nextInt());
-        }
+	// Use a larger array
+	int size = 1000;// test 1k, 10k, 100k, 1Million
+	int arrInt[] = new int[size];
+	Random s = new Random();
+	for (int i = 0; i < 1000; i++) {
+	    arrInt[i] = s.nextInt(); // String.valueOf(s.nextInt());
+	}
 
-        // use list
-        long startTime = System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            useList(arr, "A");
-        }
-        long endTime = System.nanoTime();
-        long duration = endTime - startTime;
-        System.out.println("useList:  " + duration / 1000000);
+	// use list
+	long startTime = System.nanoTime();
+	for (int i = 0; i < 100000; i++) {
+	    useList(arr, "A");
+	}
+	long endTime = System.nanoTime();
+	long duration = endTime - startTime;
+	System.out.println("useList:  " + duration / 1000000);
 
-        // use set
-        startTime = System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            useSet(arr, "A");
-        }
-        endTime = System.nanoTime();
-        duration = endTime - startTime;
-        System.out.println("useSet:  " + duration / 1000000);
+	// use set
+	startTime = System.nanoTime();
+	for (int i = 0; i < 100000; i++) {
+	    useSet(arr, "A");
+	}
+	endTime = System.nanoTime();
+	duration = endTime - startTime;
+	System.out.println("useSet:  " + duration / 1000000);
 
-        // use loop
-        startTime = System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            useLoop(arr, "A");
-        }
-        endTime = System.nanoTime();
-        duration = endTime - startTime;
-        System.out.println("useLoop:  " + duration / 1000000);
+	// use loop
+	startTime = System.nanoTime();
+	for (int i = 0; i < 100000; i++) {
+	    useLoop(arr, "A");
+	}
+	endTime = System.nanoTime();
+	duration = endTime - startTime;
+	System.out.println("useLoop:  " + duration / 1000000);
 
-        // use Arrays.binarySearch()
-        startTime = System.nanoTime();
-        for (int i = 0; i < 100000; i++) {
-            useArraysBinarySearch(arr, "A");
-        }
-        endTime = System.nanoTime();
-        duration = endTime - startTime;
-        System.out.println("useArrayBinary:  " + duration / 1000000);
+	// use Arrays.binarySearch()
+	startTime = System.nanoTime();
+	for (int i = 0; i < 100000; i++) {
+	    useArraysBinarySearch(arr, "A");
+	}
+	endTime = System.nanoTime();
+	duration = endTime - startTime;
+	System.out.println("useArrayBinary:  " + duration / 1000000);
 
     }
 

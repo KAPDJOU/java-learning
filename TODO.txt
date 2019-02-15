@@ -1,2 +1,33 @@
+
+contain codingame and many plugins
+
+* https://www.xarg.org/puzzles/
+
+* https://codesignal.com/
+sign up with github
+
+* project euler (login : citizendiop )
+
+	https://fr.wikipedia.org/wiki/Project_Euler
+	
+	https://projecteuler.net/
+
+https://gist.github.com/danielpaul/9297194
+
+Exercice Java : Algorithme qui calcul la somme des n premiers nombres
+https://www.youtube.com/watch?v=EEnF7AA_gcA
+
+https://github.com/eugenp/tutorials/tree/master/core-java
+https://github.com/eugenp/tutorials/tree/master/core-java-8
+https://github.com/eugenp/tutorials/tree/master/java-strings
+
+https://code.i-harness.com/fr/tagged/java
+
+https://github.com/winterbe/java8-tutorial
+
 progJav9 : 
 	update code example with java 8
+
+
+* eQUALS HASHCODE
+https://www.infoq.com/fr/articles/retour-sur-les-bases-equals-et-hashcode

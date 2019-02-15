@@ -69,8 +69,7 @@ public class ArraysDemo {
         Arrays.stream(numbers).reduce(0L, (x, y) -> x + y);
         // or
         Arrays.stream(numbers).reduce(0L, Double::sum);
-        
-        
+                
         // be careful
         int[] arr = new int[]{Integer.MIN_VALUE, Integer.MIN_VALUE};
         long sum = Arrays.stream(arr).sum(); // Wrong: sum == 0
@@ -92,8 +91,8 @@ public class ArraysDemo {
         //map or filter
         Arrays.stream(a).map(n -> n * 2);
         Arrays.stream(a).filter(n -> n % 4 == 0);
-
     }
+    
     /**
      * Print ARRAYS to String
      */
@@ -113,7 +112,6 @@ public class ArraysDemo {
         int columns = 3;
         int[][] array2D = new int[rows][columns];
         System.out.println("Arrays.deepToString : " + Arrays.deepToString(array));
-
     }
 
     /**

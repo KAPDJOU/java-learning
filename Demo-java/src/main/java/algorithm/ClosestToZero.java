@@ -14,20 +14,20 @@ public class ClosestToZero {
 
     static int closestToZero(int[] ints) {
 
-        if (ints.length == 0 || ints == null) {
-            return 0;
-        }
+	if (ints.length == 0 || ints == null) {
+	    return 0;
+	}
 
-        int T;
-        int min = Integer.MAX_VALUE;
-        /* Search the temperature of minimum absolute valueReads */
-        for (int i = 0; i < ints.length; i++) {
-            T = ints[i];
-            if (Math.abs(T) < Math.abs(min) || (T == -min && T > 0))
-                min = T;
-        }
-
-        return min;
+	int T;
+	int min = Integer.MAX_VALUE;
+	/* Search the temperature of minimum absolute valueReads */
+	for (int i = 0; i < ints.length; i++) {
+	    T = ints[i];
+	    if (Math.abs(T) < Math.abs(min) || (T == -min && T > 0)) {
+		min = T;
+	    }
+	}
+	return min;
     }
 
 }

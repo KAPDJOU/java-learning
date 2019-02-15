@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 /**
  * La suite de Fibonacci est une suite d'entier dont la valeur de chaque terme est égale à la somme des valeurs des deux
  * termes précédents. C'est donc une suite récurrente.
@@ -29,90 +28,89 @@ public class Fibonacci {
      */
     public static void main(String[] args) {
 
-        System.out.println("result for 4 and UP :" + fibbWithClosetNumber(4, closest.UP));
-        System.out.println("result for 4 and DOWN :" + fibbWithClosetNumber(4, closest.DOWN));
+	System.out.println("result for 4 and UP :" + fibbWithClosetNumber(4, closest.UP));
+	System.out.println("result for 4 and DOWN :" + fibbWithClosetNumber(4, closest.DOWN));
     }
 
     /**
      * Suite de fibonacci & la valeur la plus proche selon la direction donnée
      */
     public static Integer fibbWithClosetNumber(Integer number, closest en) {
-        int fib = 1;
-        int termePrec1 = 2;
-        int termePrec2 = 1;
+	int fib = 1;
+	int termePrec1 = 2;
+	int termePrec2 = 1;
 
-        System.out.println("Les " + number + " premiers éléments de la suite de Fibonacci sont : ");
+	System.out.println("Les " + number + " premiers éléments de la suite de Fibonacci sont : ");
 
-        List<Integer> resultList = new ArrayList<>();
-        Integer result = 0;
+	List<Integer> resultList = new ArrayList<>();
+	Integer result = 0;
 
-        for (int i = 1; i <= number; i++) {
+	for (int i = 1; i <= number; i++) {
 
-            if (i == 2) {
-                fib = 2;
-            }
+	    if (i == 2) {
+		fib = 2;
+	    }
 
-            if (i > 2) {
-                fib = termePrec1 + termePrec2;
-                termePrec2 = termePrec2;
-                termePrec1 = fib;
-            }
+	    if (i > 2) {
+		fib = termePrec1 + termePrec2;
+		termePrec2 = termePrec1;
+		termePrec1 = fib;
+	    }
 
-            resultList.add(fib);
+	    resultList.add(fib);
 
-        }
+	}
 
-        // retourne l'element le plus p^roche
-        if (closest.DOWN.equals(en)) {
-            for (Integer e : resultList) {
-                if (e == number - 1) {
-                    result = e;
-                }
-            }
+	// retourne l'element le plus p^roche
+	if (closest.DOWN.equals(en)) {
+	    for (Integer e : resultList) {
+		if (e == number - 1)
+		    result = e;
+	    }
 
-        } else {
-            for (Integer e : resultList) {
-                if (e == number + 1) {
-                    result = e;
-                }
-            }
-        }
+	} else {
+	    for (Integer e : resultList) {
+		if (e == number + 1)
+		    result = e;
+	    }
+	}
 
-        return result;
-
+	return result;
     }
 
-    /**x0=0 , X1=1, xn=xn-2+xn-1
+    /**
+     * x0=0 , X1=1, xn=xn-2+xn-1
+     * 
      * @param args
      */
     public static void fibonacci1(String[] args) {
 
-        int nbElement;
+	int nbElement;
 
-        int fib = 1;
-        int terme_prec1 = 2;
-        int terme_prec2 = 1;
+	int fib = 1;
+	int terme_prec1 = 2;
+	int terme_prec2 = 1;
 
-        @SuppressWarnings("resource")
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Entrez le nombre de Fibonacci a calculer ? : ");
-        nbElement = sc.nextInt();
-        System.out.println("Les " + nbElement + " premiers éléments de la suite de Fibonacci sont : ");
+	@SuppressWarnings("resource")
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Entrez le nombre de Fibonacci a calculer ? : ");
+	nbElement = sc.nextInt();
+	System.out.println("Les " + nbElement + " premiers éléments de la suite de Fibonacci sont : ");
 
-        for (int i = 1; i <= nbElement; i++) {
+	for (int i = 1; i <= nbElement; i++) {
 
-            if (i == 2) {
-                fib = 2;
-            }
+	    if (i == 2) {
+		fib = 2;
+	    }
 
-            if (i > 2) {
-                fib = terme_prec1 + terme_prec2;
-                terme_prec2 = terme_prec1;
-                terme_prec1 = fib;
-            }
+	    if (i > 2) {
+		fib = terme_prec1 + terme_prec2;
+		terme_prec2 = terme_prec1;
+		terme_prec1 = fib;
+	    }
 
-            System.out.print(fib + ";");
-        }
+	    System.out.print(fib + ";");
+	}
 
     }
 
@@ -122,12 +120,11 @@ public class Fibonacci {
  * Closest ENUM with instance UP and DOWN
  * 
  * @author Malick
- *
  */
 enum closest {
 
     UP,
-    
+
     DOWN;
-            
+
 }

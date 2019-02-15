@@ -12,6 +12,7 @@ public class lambdas {
 		// références de méthodes
 		String[] myArray = {"one", "two", "three", "four"};
 		Arrays.sort(myArray, String::compareToIgnoreCase);
+		Arrays.sort(myArray, String::compareTo);
 
 
 	}
