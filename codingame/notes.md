@@ -1,3 +1,36 @@
+# CODINGAME
+plateform de test en ligne  = serious game = plateforme de recrutement 
+
+Objectif : 
+mettre en valeur, autrement qu’au travers d’un CV, les compétences en programmation des développeurs
+
+se situer parmi une population de passionnés
+
+parvenir à gagner des places au fur et à mesure des éditions
+
+apprendre des autres et partager son savoir-faire
+
+Améliorer la manière de réfléchir, ma logique et mon habileté à résoudre des problèmes dans un temps limité.
+
+Les meilleurs CodinGames sont ceux qui parviennent à trouver des solutions optimisées dans un temps minimum, mais la rapidité ne fait pas tout. 
+
+Beaucoup de participants font preuve de ténacité et de persévérance pour terminer les épreuves et même s’ils obtiennent un score plus faible, cela témoigne d’un vrai sens de l’engagement et de la passion pour leur métier
+
+être en mesure de bien comprendre et de décortiquer les problèmes
+à minima être à l’aise dans au moins un langage de programmation pour implémenter une solution fonctionnelle
+être également rigoureux pour bien prendre en compte tous les cas d’utilisation présentés dans les énoncés et être en mesure de soumettre une solution qui répond à l’ensemble du problème.
+la gestion du temps est un point essentiel qui permet, à score égal, de départager deux participants en faveur de celui qui aura été le plus efficace.
+
+Rules :
+La qualité est plus importante que le temps de réponse. Une solution qui prend en compte tous les cas d’utilisation gagne le maximum de points.
+
+#### Best practice :
+
+* N'hésitez pas à copier le code de la question dans votre éditeur de code habituel pour bénéficier de l'auto-completion et de la correction syntaxique. Coller ensuite votre réponse dans notre éditeur quand elle est prête.
+
+* Durant le test, vous pouvez aller chercher toutes les informations qui vous semblent nécessaires sur internet.
+
+
 ## Coding GAME
 
 s'entrainer, se perfectionnner, de tester leurs connaissances, et de mettre en avant leurs compétences de manière très concrète auprès des entreprises. 
@@ -61,19 +94,33 @@ http://dootrix.com/graph-theory-codingame-puzzlw-walkthrough-skynet-the-virus/
 * Challenge coding game
 * Battle dev (http://www.regionsjob.com/battledev/)
 
+## TODO training
+
+https://www.synbioz.com/blog/exercice_de_programmation_boggle
+
+# TODO improve the given solutions
+
+* https://github.com/adrian-nesonson/Codingame
+
+* https://github.com/demkada/codingame
+
+* https://github.com/kadary/codingame
+
+* https://github.com/pathosDev/CodinGame-Solutions
+
 ## SOLUTIONS
 
-http://ethiery.vvv.enseirb-matmeca.fr/CGsolo/all.html
+https://blog.codinghorror.com/why-cant-programmers-program/
 
-https://olivier.peres.bzh/blog/?s=codingame
+
+https://www.isograd.com/FR/detailtest/test-java.php 
 
 https://www.synbioz.com/blog/exercice_de_programmation_codingame
 
 https://github.com/FireFry/CodinGame-Solutions
 
-https://github.com/adrian-nesonson/Codingame
 
-https://github.com/demkada/codingame
+
 
 esasy
 https://github.com/DruidKuma/CodinGame

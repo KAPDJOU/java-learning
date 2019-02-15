@@ -1,11 +1,7 @@
-package puzzles.easy;
+package puzzles.easy.asciiArt;
 
-import java.util.*;
-import java.io.*;
-import java.math.*;
-
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 /**
  * L'art ASCII permet de représenter des formes en utilisant des caractères.
@@ -46,9 +42,11 @@ import java.util.regex.Pattern;
  * </pre>
  * 
  * @see https://www.codingame.com/ide/5254062c7332a8af3f50058007ff7e609b39fb4
+ * @see https://www.xarg.org/puzzle/codingame/ascii-art/
+ * @see https://www.baeldung.com/ascii-art-in-java
  * @author Malick
  */
-class AsciiArt {
+public class Solution {
 
     // ASCII-art representation of the whole alphabet + ?
     static String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?";
@@ -57,89 +55,88 @@ class AsciiArt {
     static final char LAST_CHAR = 'Z';
 
     /**
-     * Main Method
-     * <p>
      * My Solution
      */
     public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
+	Scanner in = new Scanner(System.in);
 
-        // width and height of the ASCII-art representation of 1 character
-        int L = in.nextInt();
-        int H = in.nextInt();
+	// width and height of the ASCII-art representation of 1 character
+	int L = in.nextInt();
+	int H = in.nextInt();
 
-        // text to convert
-        in.nextLine();
-        String T = in.nextLine();
+	// text to convert
+	in.nextLine();// videra la ligne commencée par les autres instructions.repositionnent la tête de lecture au
+		      // début d'une autre ligne
+	String T = in.nextLine();
 
-        // To prevent minuscule char like 'a'
-        String text = T.toUpperCase();
+	// To prevent minuscule char like 'a'
+	String text = T.toUpperCase();
 
-        // ASCII art representations of the whole alphabet + ?
-        ArrayList<String> ascii = new ArrayList<String>();
+	// ASCII art representations of the whole alphabet + ?
+	ArrayList<String> ascii = new ArrayList<String>();
 
-        for (int i = 0; i < H; i++) {
-            ascii.add(in.nextLine());
-        }
+	for (int i = 0; i < H; i++) {
+	    ascii.add(in.nextLine());
+	}
 
-        // Debug Messages
-        // System.err.println("L : Width ... :" + L);
-        // System.err.println("H : Higth ... :" + H);
-        // System.err.println("T : Text Line... :" + T);
-        // System.err.println("List ASCII");
-        // ascii.forEach(System.err::println);
+	// Debug Messages
+	System.err.println("L : Width ... :" + L);
+	System.err.println("H : Higth ... :" + H);
+	System.err.println("T : Text Line... :" + T);
+	System.err.println("List ASCII");
+	ascii.forEach(System.err::println);
 
-        // find the necessary indexes of letters in alphabet string
-        ArrayList<Integer> indexes = new ArrayList<Integer>();
-        for (char c : text.toCharArray()) {
-            // Add index of '?'if character is out of delimited alphabet
-            if (c < 'A' || c > 'Z')
-                indexes.add(26); //
-            else {
-                for (char letter : alphabet.toCharArray()) {
-                    if (c == letter) {
-                        indexes.add(alphabet.indexOf(letter));
-                    }
-                }
-            }
-        }
+	// find the necessary indexes of letters in alphabet string
+	ArrayList<Integer> indexes = new ArrayList<Integer>();
+	for (char c : text.toCharArray()) {
+	    // Add index of '?'if character is out of delimited alphabet
+	    if (c < 'A' || c > 'Z')
+		indexes.add(26); //
+	    else {
+		for (char letter : alphabet.toCharArray()) {
+		    if (c == letter) {
+			indexes.add(alphabet.indexOf(letter));
+		    }
+		}
+	    }
+	}
 
-        // prints the result line by line, character by character
-        for (int j = 0; j < H; j++) {
-            for (int k = 0; k < indexes.size(); k++) {
-                System.out.print(ascii.get(j).substring(indexes.get(k) * L, indexes.get(k) * L + L));
-            }
-            System.out.println();
-        }
+	// prints the result line by line, character by character
+	for (int j = 0; j < H; j++) {
+	    for (int k = 0; k < indexes.size(); k++) {
+		System.out.print(ascii.get(j).substring(indexes.get(k) * L, indexes.get(k) * L + L));
+	    }
+	    System.out.println();
+	}
 
-        // close scanner
-        in.close();
-
+	// close scanner
+	in.close();
     }
 
     /**
-     * Other Published Solution - Best Upvoted 
+     * Other Published Solution - Best Upvoted
      * 
      * @author Malick
      */
     public static void solution() {
-        Scanner in = new Scanner(System.in);
-        int L = in.nextInt();
-        in.nextLine();
-        int H = in.nextInt();
-        in.nextLine();
-        String T = in.nextLine().toUpperCase();
-        for (int i = 0; i < H; i++) {
-            String row = in.nextLine();
-            for (int j = 0; j < T.length(); ++j) {
-                int index = T.charAt(j) - 'A'; // 'E'=69, 'A' = 65, 'Z'=90
-                if (index < 0 || index >= 26) {
-                    index = 26; // '?'
-                }
-                System.out.print(row.substring(index*L, (index*L) + L));
-            }
-            System.out.println();
-        }
+	Scanner in = new Scanner(System.in);
+	int L = in.nextInt();
+	in.nextLine();
+	int H = in.nextInt();
+	in.nextLine();
+	String T = in.nextLine().toUpperCase();
+	for (int i = 0; i < H; i++) {
+	    String row = in.nextLine();
+	    for (int j = 0; j < T.length(); ++j) {
+		int index = T.charAt(j) - 'A'; // 'E'=69, 'A' = 65, 'Z'=90
+		if (index < 0 || index >= 26) {
+		    index = 26; // '?'
+		}
+		System.out.print(row.substring(index * L, (index * L) + L));
+	    }
+	    System.out.println();
+	}
+	in.close();
     }
 
 }
